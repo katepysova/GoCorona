@@ -1,0 +1,159 @@
+@import "../variables";
+
+.section-healthcare {
+  padding-top: 80px;
+  padding-bottom: 75px;
+  overflow: hidden;
+}
+
+.healthcare {
+  &__header {
+    margin-bottom: 44px;
+
+    .heading-secondary,
+    .paragraph {
+      text-align: center;
+    }
+    .paragraph {
+      width: 55%;
+      margin: 0 auto;
+
+      @media only screen and (max-width: $bp-md) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    text-align: center;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 72px;
+    padding: 0 40px;
+    position: relative;
+    z-index: 5;
+
+    @media only screen and (max-width: $bp-lg) {
+      gap: 54px;
+      padding: 0 16px;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      gap: 44px;
+      padding: 0;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      gap: 24px;
+      padding: 0;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    box-shadow: 0px 4px 18px rgba(88, 126, 236, 0.18);
+    border-radius: 8px;
+    padding: 36px 26px;
+    background-color: $color-white;
+
+    &--1 {
+      position: relative;
+      &:before,
+      &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        background-color: $color-red;
+
+        @media only screen and (max-width: $bp-sm) {
+          content: none;
+        }
+      }
+
+      &::before {
+        width: 66px;
+        height: 66px;
+        border-radius: 16px;
+        left: 0;
+        bottom: 0;
+        transform: translate(-50%, 65%) rotate(45deg);
+      }
+
+      &::after {
+        width: 96px;
+        height: 96px;
+        border-radius: 30px;
+        right: 0;
+        top: 0;
+        transform: translate(50%, 60%) rotate(30deg);
+      }
+    }
+
+    &--2 {
+      position: relative;
+      &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        background-color: $color-red;
+        width: 127px;
+        height: 127px;
+        border-radius: 30px;
+        right: 0;
+        bottom: 0;
+        transform: translate(70%, 15%) rotate(55deg);
+
+        @media only screen and (max-width: $bp-sm) {
+          content: none;
+        }
+      }
+    }
+
+    &--3 {
+      position: relative;
+      &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        background-color: $color-red;
+        width: 66px;
+        height: 66px;
+        border-radius: 16px;
+        right: 0;
+        top: 0;
+        transform: translate(50%, -50%) rotate(55deg);
+
+        @media only screen and (max-width: $bp-sm) {
+          content: none;
+        }
+      }
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+      padding: 26px 18px;
+    }
+  }
+
+  &__card-icon {
+    width: 72px;
+    height: 72px;
+    color: $color-red;
+    margin-bottom: 58px;
+
+    @media only screen and (max-width: $bp-extra-sm) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__card-title {
+    color: $color-black;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.08em;
+  }
+}

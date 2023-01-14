@@ -1,0 +1,59 @@
+@import "../variables";
+
+.button {
+  &,
+  &:link,
+  &:visited {
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Raleway, sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 12px;
+    letter-spacing: 0.14em;
+    display: inline-block;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    color: $color-white;
+    transition: all 0.2s;
+    min-width: 144px;
+    text-align: center;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 12px rgba($color-black, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba($color-black, 0.2);
+  }
+
+  &--blue {
+    background-color: $color-blue;
+
+    &:hover {
+      background-color: darken($color-blue, 25%);
+    }
+
+    &:active {
+      background-color: darken($color-blue, 35%);
+    }
+  }
+
+  &--red {
+    background-color: $color-red;
+
+    &:hover {
+      background-color: darken($color-red, 25%);
+    }
+
+    &:active {
+      background-color: darken($color-red, 35%);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "../variables";
+
+.square {
+  position: absolute;
+  background-color: $color-red;
+  border-radius: 30px;
+
+  &--big {
+    width: 147px;
+    height: 147px;
+  }
+
+  &--small {
+    width: 77px;
+    height: 77px;
+  }
+}

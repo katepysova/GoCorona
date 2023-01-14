@@ -1,0 +1,117 @@
+@import "../variables";
+
+.section-hero {
+  background-color: $color-background-grey;
+  padding-top: $header-height-desktop;
+  padding-bottom: 48px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1500;
+    right: 0;
+    top: 0;
+    width: 250px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    height: 100%;
+    background-color: $color-red;
+
+    @media only screen and (max-width: $bp-lg) {
+      width: 170px;
+    }
+    @media only screen and (max-width: $bp-md) {
+      content: none;
+    }
+  }
+
+  @media only screen and (max-width: $bp-lg) {
+    height: auto;
+    min-height: auto;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    padding-top: $header-height-mobile;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 70px;
+  }
+
+  @media screen and (max-width: 400px) {
+    height: 100vh;
+    min-height: 100vh;
+  }
+}
+
+.hero {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    margin-bottom: 60px;
+    gap: 70px;
+
+    @media only screen and (max-width: $bp-lg) {
+      margin-bottom: 24px;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      gap: 32px;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      flex-direction: column;
+    }
+
+    @media only screen and (max-width: $bp-extra-sm) {
+      margin-bottom: 0;
+      flex: 1;
+    }
+  }
+
+  &__info-box {
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+
+    .button {
+      @media only screen and (max-width: $bp-sm) {
+        align-self: center;
+      }
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      flex-basis: 75%;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      text-align: center;
+      align-items: stretch;
+      flex: 1;
+    }
+  }
+
+  &__image {
+    text-align: center;
+    img {
+      width: 100%;
+      position: relative;
+      z-index: 1800;
+
+      @media only screen and (max-width: $bp-sm) {
+        width: 75%;
+      }
+    }
+  }
+
+  &__video-box {
+    @media only screen and (max-width: $bp-sm) {
+      align-self: flex-start;
+    }
+  }
+}

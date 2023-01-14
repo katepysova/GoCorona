@@ -1,0 +1,111 @@
+@import "../variables";
+
+.center {
+  width: 100%;
+  align-items: center;
+  position: absolute;
+  z-index: 2001;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  height: $header-height-desktop;
+  z-index: 2000;
+
+  &__button {
+    flex-basis: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    @media only screen and (max-width: $bp-lg) {
+      flex-basis: 170px;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      flex-basis: auto;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      margin-left: auto;
+      height: $header-height-mobile;
+    }
+  }
+
+  @media only screen and (max-width: $bp-lg) {
+    gap: 20px;
+  }
+
+  @media only screen and (max-width: $bp-extra-sm) {
+    height: 64px;
+    gap: 16px;
+  }
+}
+
+.menu-btn {
+  cursor: pointer;
+  margin-left: auto;
+  height: 30px;
+  width: 30px;
+  display: none;
+  position: relative;
+  border: none;
+  background-color: transparent;
+
+  &__icon {
+    top: 50%;
+    transform: translateY(-50%);
+
+    &,
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      left: 0;
+      background-color: $color-black;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -9px;
+    }
+
+    &::after {
+      top: 9px;
+    }
+  }
+
+  @media only screen and (max-width: $bp-extra-sm) {
+    display: inline-block;
+    margin-left: 0;
+    z-index: 1000;
+  }
+}
+
+@media only screen and (max-width: $bp-extra-sm) {
+  .header.nav--open {
+    .menu-btn {
+      position: fixed;
+      right: 16px;
+      top: 17px;
+      &__icon {
+        & {
+          background-color: transparent;
+        }
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+        &::after {
+          top: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
